@@ -1,0 +1,15 @@
+services:
+  wordcloud_service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wordcloud-agent
+    ports:
+      - "8201:8000"
+    restart: unless-stopped
+    volumes:
+      - .:/app
+  redis:
+    image: redis
+    container_name: wordcloud-redis
+    restart: unless-stopped
