@@ -11,7 +11,7 @@ async def analyze_item(item: dict):
     is_meaningless = not any(c.isalnum() for c in content)
 
     if is_meaningless:
-        if item_type.upper() in ["FBPAGE_TOPIC", "FBGROUP_TOPIC", "FBUSER_TOPIC"]:
+        if item_type.upper() in ["fbPageTopic", "fbGroupTopic", "fbUserTopic"]:
             text = f"{title} {description} {content}"
         else:
             text = content
